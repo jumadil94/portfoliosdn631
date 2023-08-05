@@ -353,6 +353,8 @@ body {
           // jalankan validasi input 
           validateInputs();
 
+          console.validateInputs();
+
 
         })
 
@@ -440,23 +442,16 @@ body {
             setSuccess(email);
             localStorage.setItem('email', JSON.stringify(emailValue));
           }
-          
-          
-          
-          
-          //   localStorage.setItem('umur', JSON.stringify(umur));
-          //   localStorage.setItem('umur', JSON.stringify(umur));
-          //   // alert();
-           
-        
-          //   setSuccess(umur);
-          // setSuccess(lokasi);
-          // setSuccess(noTelp);
-          //   setSuccess(email);
-          //   setSuccess(pekerjaan);
 
-
-
+          if(namaLengkapValue !== '' && 
+              umurValue !== '' && 
+              lokasiValue !== '' &&
+              pekerjaanValue !== '' &&
+              noTelpValue !== '' &&
+              emailValue !== ''  ) 
+              {
+location.reload();
+          }
 
         }
 
@@ -465,41 +460,16 @@ body {
         localStorage.getItem("umur") !== null &&
         localStorage.getItem("lokasi") !== null &&
         localStorage.getItem("pekerjaan") !== null &&
-        localStorage.getItem("noTelp") !== null &&
+        localStorage.getItem("noTelp") !== null  &&
         localStorage.getItem("email") !== null
         ) {
-
-          document.querySelector('.value_namaLengkap').innerHTML = JSON.parse(localStorage.getItem("namaLengkap"))
-          document.querySelector('.value_umur').innerHTML = JSON.parse(localStorage.getItem("umur"))
-          document.querySelector('.value_lokasi').innerHTML = JSON.parse(localStorage.getItem("lokasi"))
-          document.querySelector('.value_noTelp').innerHTML = JSON.parse(localStorage.getItem("noTelp"))
-          document.querySelector('.value_email').innerHTML = JSON.parse(localStorage.getItem("email"))
-        }
-            
-
-
-
-        // fetch data.json
-
-        // fetch('data.json')
-        // .then(function (response) {
-        //   return response.json();
-        // })
-        // .then(function (data) {
-        //   for(var i=0; i < data.length; i++) {
-        //     // document.getElementById("fetchdata").innerHTML += 
-            
-        //     document.querySelector(".value_namaLengkap").innerHTML = data[i].namaLengkap;
-        //     document.querySelector(".value_umur").innerHTML = data[i].umur;
-        //     document.querySelector(".value_lokasi").innerHTML = data[i].lokasi;
-        //     document.querySelector(".value_noTelp").innerHTML = data[i].noTelp;
-        //     document.querySelector(".value_email").innerHTML = data[i].email;
-
-        //   }
-        // })
-        // .catch(function (error) {
-        //   console.log(error);
-        // })
+          document.querySelector('.value_namaLengkap').innerHTML = JSON.parse(localStorage.getItem("namaLengkap"));
+          document.querySelector('.value_umur').innerHTML = JSON.parse(localStorage.getItem("umur"));
+          document.querySelector('.value_lokasi').innerHTML = JSON.parse(localStorage.getItem("lokasi"));
+          document.querySelector('.value_noTelp').innerHTML = JSON.parse(localStorage.getItem("noTelp"));
+          document.querySelector('.value_email').innerHTML = JSON.parse(localStorage.getItem("email"));       
+        } 
+  
 
 
 
